@@ -26,6 +26,7 @@ const App = () => {
   };
 
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
+  const positivePercentage = Math.round((feedback.good / totalFeedback) * 100);
 
   return (
     <>
@@ -33,7 +34,7 @@ const App = () => {
       <Options onLeaveFeedback={updateFeedback} showReset={totalFeedback > 0} onReset={resetFeedback} />
       {
         totalFeedback > 0 ? (
-          <Feedback feedback={feedback} />
+          <Feedback feedback={feedback} totalFeedback={totalFeedback} positivePercentage={positivePercentage} />
         ) : (
             <Notification message="No feedback yet"/>
         )
