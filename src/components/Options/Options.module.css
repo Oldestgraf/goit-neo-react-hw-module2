@@ -1,0 +1,5 @@
+.optionsList {
+  padding: 10px;
+  display: inline-flex;
+  gap: 10px;
+}
